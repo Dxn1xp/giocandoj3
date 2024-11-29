@@ -15,6 +15,7 @@ a {
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #070308;
+    color: #fff; /* Cor do texto padrão */
 }
 
 nav {
@@ -22,16 +23,16 @@ nav {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center; /* Alinha os itens no centro */
+    justify-content: center;
     gap: 2rem;
 }
 
 .nav-logo img {
-    max-width: 150px; /* Ajuste o tamanho da logo diretamente na imagem */
-    height: auto; /* Mantém a proporção da imagem */
+    max-width: 150px;
+    height: auto;
 }
 
-.nav-links{
+.nav-links {
     list-style: none;
     display: flex;
     align-items: center;
@@ -39,13 +40,13 @@ nav {
     justify-content: center;
 }
 
-.link a{
+.link a {
     position: relative;
     padding-bottom: 0.75rem;
     color: #fff;
 }
 
-.link a::after{
+.link a::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -56,21 +57,20 @@ nav {
     transition: all 0.3s ease;
 }
 
-.link a:hover::after{
+.link a:hover::after {
     width: 70%;
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
-    position: relative;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    top: -12rem;
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    height: 100vh; /* Faz a altura da seção ocupar toda a viewport */
-    text-align: center; /* Centraliza o texto */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
 }
 
 header .content h4 {
@@ -134,25 +134,24 @@ section .header {
 }
 
 .features .card:hover {
-    background-color: #b3b3b3
+    background-color: #b3b3b3;
 }
 
-.sub-header{
+.sub-header {
     max-width: 600px;
     margin: auto;
     text-align: center;
     color: #ccc;
 }
 
-
-.pricing{
+.pricing {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.pricing .card{
+.pricing .card {
     padding: 3rem 2rem;
     background-color: #27272a;
     display: flex;
@@ -162,24 +161,24 @@ section .header {
     transition: all 0.3s ease;
 }
 
-.pricing .card:hover{
+.pricing .card:hover {
     background-color: #323232;
     border-color: #9000f0;
 }
 
-.pricing .card .content{
+.pricing .card .content {
     flex: 1;
     margin-bottom: 2rem;
 }
 
-.pricing .card h4{
+.pricing .card h4 {
     margin-bottom: 1rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.pricing .card h3{
+.pricing .card h3 {
     color: #fff;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
@@ -188,41 +187,30 @@ section .header {
     border-bottom: 2px dashed #fff;
 }
 
-.pricing .card p{
+.pricing .card p {
     color: #fff;
     margin-bottom: 0.75rem;
 }
 
-.pricing .card p i{
+.pricing .card p i {
     color: #ccc;
     font-size: 1.2rem;
     margin-right: 0.3rem;
 }
 
-.pricing .card button{
+.pricing .card button {
     color: #fff;
     background-color: transparent;
     border: 2px solid #fff;
 }
 
-.pricing .card button:hover{
+.pricing .card button:hover {
     background-color: #9000f0;
     border-color: #9000f0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .header {
     text-align: center;
-}
-
-.sub-header {
-    text-align: center;
-    margin-bottom: 40px;
 }
 
 .plan-image {
@@ -235,13 +223,12 @@ section .header {
     padding: 20px;
 }
 
-
 section {
     margin: 2rem 0;
 }
 
 section h2.header {
-    color: #fff;
+    color: #8d8d8d;
     text-align: center;
     font-size: 2.5rem;
     padding: 16px;
@@ -253,60 +240,91 @@ section p {
     color: #ccc;
     margin: 1rem 0;
     line-height: 1.6;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
 }
 
 section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 1rem 0;
+}
+
+section ul li {
+    margin: 0.5rem 0;
+}
+
+/* Media Queries for Responsividade */
+@media (max-width: 1200px) {
+    nav {
+        flex-direction: column; /* Muda para coluna em telas menores */
+    }
+
+    .features {
+        grid-template-columns: 1fr; /* Mudança para uma coluna */
+    }
+
+    .pricing {
+        grid-template-columns: 1fr; /* Mudança para uma coluna */
+    }
+
+    header .content h1 {
+        font-size: 2.5rem; /* Reduz o tamanho do título */
+        line-height: 3rem;
+    }
+
+    header .content h4 {
+        font-size: 0.9rem; /* Reduz o tamanho do subtítulo */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Muda para coluna em dispositivos menores */
+        gap: 1rem;
+    }
+
+    .container {
+        height: auto; /* Permite altura automática */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    section h2.header {
+        font-size: 2rem; /* Reduz o tamanho do título */
+    }
+
+    section p {
+        font-size: 0.9rem; /* Reduz o tamanho do texto */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 1rem; /* Reduz o espaço entre os itens do nav */
+    }
+
+    .features .card {
+        padding: 1rem; /* Reduz o padding dos cards */
+    }
+
+    .pricing .card {
+        padding: 2rem 1rem; /* Reduz o padding dos cards de preços */
+    }
+}
+
+.card p {
+    color: #000000; /* Cor do texto */
+    margin: 1rem 0; /* Margem superior e inferior */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.card ul {
     list-style-type: disc; /* Estilo de lista */
     padding-left: 20px; /* Espaçamento à esquerda */
     margin: 1rem 0; /* Margem vertical */
 }
 
-section ul li {
+.card ul li {
     margin: 0.5rem 0; /* Espaçamento entre os itens da lista */
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.features .card {
-    background-color: #9d23ee;
-    padding: 1.5rem;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.features .card:hover {
-    background-color: #9d23ee7c; /* Mudança de cor no hover */
-}
-
-.features .card h4 {
-    margin: 0.5rem 0;
-    font-weight: 500;
-}
-
-.features .card a {
-    margin-top: auto; /* Para empurrar o link para o final do cartão */
-}
-
-.sub-header {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    color: #ccc;
-}
-
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #070308;
-    color: #fff; /* Cor do texto padrão */
+    color: #000000; /* Cor do texto da lista */
 }
